@@ -1,12 +1,14 @@
 <template>
     <div id="show-blogs">
-        <h1>All blog articles</h1>
+        <h1>ブログ一覧</h1>
         <input type="text" v-model="search" placeholder="タイトルを検索" />
         <div v-if="filteredBlogs.length == 0">
             <h3>検索結果に該当するタイトルのブログはありません</h3>
         </div>
         <div v-for="blog in filteredBlogs" class="single-blog">
-            <h2 v-rainbow>{{ blog.title | to-uppercase }}</h2>
+            <router-link v-bind:to="'/blog/' + blog.id"><h2 v-rainbow>
+                {{ blog.title | to-uppercase }}
+                </h2></router-link>
             <article>{{ blog.body | snippet }}</article>
         </div>
     </div>
