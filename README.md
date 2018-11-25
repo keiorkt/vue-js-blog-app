@@ -1,6 +1,6 @@
 # ブログ投稿アプリ
 
-> VueJSのサンプルプロジェクトです。
+> VueJSのサンプルプロジェクトです。<br>
 > DBはFirebaseを使っています。
 
 ## Build Setup
