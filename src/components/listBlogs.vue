@@ -1,15 +1,13 @@
 <template>
     <div id="show-blogs">
-        <h1>ブログ一覧</h1>
+        <h1>List blog Title</h1>
         <input type="text" v-model="search" placeholder="タイトルを検索" />
         <div v-if="filteredBlogs.length == 0">
             <h3>検索結果に該当するタイトルのブログはありません</h3>
         </div>
         <div v-for="blog in filteredBlogs" class="single-blog">
-            <router-link v-bind:to="'/blog/' + blog.id"><h2 v-rainbow>
-                {{ blog.title | to-uppercase }}
-                </h2></router-link>
-            <article>{{ blog.content | snippet }}</article>
+            <h2 v-rainbow>{{ blog.title | to-uppercase }}</h2>
+            <article>{{ blog.body | snippet }}</article>
         </div>
     </div>
 </template>
@@ -29,15 +27,7 @@ export default {
     created() {
         this.$http.get('https://vue-blog-7eddf.firebaseio.com/posts.json')
             .then(function(data){
-                return data.json();
-            })
-            .then(function(data){
-                var blogsArray = [];
-                for (let key in data) {
-                    data[key].id = key
-                    blogsArray.push(data[key]);
-                }
-                this.blogs = blogsArray;
+                this.blogs = data.body.slice(0,10);
             })
     },
     computed: {
