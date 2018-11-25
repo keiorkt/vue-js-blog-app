@@ -1,6 +1,7 @@
-# vuejs-playlist
+# ブログ投稿アプリ
 
-> A Vue.js project
+> VueJSのサンプルプロジェクトです。
+> DBはFirebaseを使っています。
 
 ## Build Setup
 
