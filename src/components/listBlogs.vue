@@ -25,7 +25,7 @@ export default {
     methods: {
     },
     created() {
-        this.$http.get('https://jsonplaceholder.typicode.com/posts')
+        this.$http.get('https://vue-blog-7eddf.firebaseio.com/posts.json')
             .then(function(data){
                 this.blogs = data.body.slice(0,10);
             })
