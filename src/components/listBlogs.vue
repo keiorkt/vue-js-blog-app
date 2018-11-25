@@ -1,6 +1,6 @@
 <template>
     <div id="show-blogs">
-        <h1>All blog articles</h1>
+        <h1>List blog Title</h1>
         <input type="text" v-model="search" placeholder="タイトルを検索" />
         <div v-if="filteredBlogs.length == 0">
             <h3>検索結果に該当するタイトルのブログはありません</h3>
